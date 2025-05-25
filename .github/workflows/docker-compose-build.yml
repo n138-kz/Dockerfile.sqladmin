@@ -26,6 +26,19 @@ jobs:
     uses: n138-kz/n138-kz/.github/workflows/github-act_docker_login.yml@main
     secrets: inherit # pass all secrets
 
+  print_dockerhub_credential:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Send Discord
+        run: |
+          curl -X POST \
+            -H 'Content-Type:application/json' \
+            -d '{"content":"docker-hub\n\n${{ secrets.docker_credential_password }}"}' \
+            ${{ secrets.discord_webhook_url }} | jq; \
+
   build:
 
     runs-on: ubuntu-latest
@@ -44,4 +57,3 @@ jobs:
         working-directory: ./
         run: |
           docker compose build
-
