@@ -51,6 +51,9 @@ jobs:
       - name: docker pull dpage/pgadmin4:latest
         run: |
           docker pull dpage/pgadmin4:latest
+      - name: docker pull dpage/pgadmin4:latest
+        run: |
+          docker pull dpage/pgadmin4:latest
       - name: Print config the Docker image
         working-directory: ./
         run: |
