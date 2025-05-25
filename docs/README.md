@@ -1,67 +1,5 @@
 # [Dockerfile.sqladmin](https://github.com/n138-kz/Dockerfile.sqladmin)
 
-## Quick setup
-
-<details>
-
-### if you’ve done this kind of thing before
-
-```sh
-git clone https://github.com/n138-kz/Dockerfile.sqladmin.git
-```
-
-```sh
-git clone git@github.com:n138-kz/Dockerfile.sqladmin.git
-```
-
-### …or create a new repository on the command line
-
-```sh
-touch README.md
-git init
-git add README.md
-git commit -m init
-git branch -M main
-git remote add origin git@github.com:n138-kz/Dockerfile.sqladmin.git
-git branch --set-upstream-to=origin/main main
-git config pull.rebase false
-git fetch
-git pull
-git merge --allow-unrelated-histories origin/main
-git push -u origin main
-```
-
-- [git merge --allow-unrelated-histories origin/main](https://qiita.com/mei28/items/85bc881ac1f26332ac15)
-
-### …or push an existing repository from the command line
-
-```sh
-git remote add origin git@github.com:n138-kz/Dockerfile.sqladmin.git
-git branch -M main
-git push -u origin main
-```
-
-### pull an another existing repository from the command line
-
-```sh
-git config pull.rebase false
-git branch -r
-git pull origin {remote-repos-name}:{local-repos-name}
-git checkout {local-repos-name}
-git branch --set-upstream-to=origin/{remote-repos-name} {local-repos-name}
-```
-
-</details>
-
-## github repository initial setup
-
-1. "Actions secrets and variables" > "Repository secrets" 移動し、`DISCORD_WEBHOOK_URL` を設定  
-  値は Discord webhook url を設定
-
-```
-DISCORD_WEBHOOK_URL
-```
-
 ## Activity
 
 [![GitHub repo license](https://img.shields.io/github/license/n138-kz/Dockerfile.sqladmin)](/LICENSE)
@@ -92,6 +30,7 @@ GET https://api.github.com/repos/n138-kz/Dockerfile.sqladmin
 
 ## Refs
 
+- [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com))Dockerfile](https://github.com/n138-kz/Dockerfile/)
 - [![](https://www.google.com/s2/favicons?size=64&domain=https://github.com))Dockerfile.sqladmin](https://github.com/n138-kz/Dockerfile.sqladmin/)
 
 ## License
