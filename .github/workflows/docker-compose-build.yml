@@ -48,7 +48,6 @@ jobs:
 
       - name: docker login
         run: docker login --username ${{ vars.docker_credential_username }} --password ${{ secrets.docker_credential_password }}
-
       - name: Print config the Docker image
         working-directory: ./
         run: |
