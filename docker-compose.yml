@@ -1,6 +1,8 @@
 services:
    sqladmin_my:
-      image: phpmyadmin/phpmyadmin:latest
+      build:
+         context: .
+         dockerfile: build_sqladmin_my/Dockerfile
       ports:
          - "${MYADMIN_WEBPORT:-25561-25569}:80"
       volumes:
@@ -19,7 +21,9 @@ services:
          retries: 3
          start_period: 10s
    sqladmin_pg:
-      image: dpage/pgadmin4:latest
+      build:
+         context: .
+         dockerfile: build_sqladmin_pg/Dockerfile
       ports:
          - "${PGADMIN_WEBPORT:-25561-25569}:80"
       environment:
