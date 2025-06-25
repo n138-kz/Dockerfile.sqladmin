@@ -1,40 +1,4 @@
 services:
-   database_my:
-      build: database_my/
-      volumes:
-         - db-my-store:/var/lib/mysql
-      environment:
-         TZ: Asia/Tokyo
-         MYSQL_USER: ${MYSQL_USER:-root}
-         MYSQL_PASSWORD: ${MYSQL_PASSWORD:-password}
-         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password}
-         MYSQL_DATABASE: ${MYSQL_DATABASE:-password}
-      restart: no
-      networks:
-         - database_network_default
-      healthcheck:
-         test: psql -U postgres --list
-         interval: 1s
-         timeout: 1s
-         retries: 3
-         start_period: 1s
-   database_pg:
-      build: database_pg/
-      volumes:
-         - db-pg-store:/var/lib/postgresql/data
-      environment:
-         TZ: Asia/Tokyo
-         POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
-         POSTGRES_DB: ${POSTGRES_DB:-sqladmin}}
-      restart: no
-      networks:
-         - database_network_default
-      healthcheck:
-         test: psql -U postgres --list
-         interval: 1s
-         timeout: 1s
-         retries: 3
-         start_period: 1s
    sqladmin_my:
       image: phpmyadmin/phpmyadmin:latest
       ports:
