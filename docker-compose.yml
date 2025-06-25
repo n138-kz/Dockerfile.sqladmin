@@ -2,7 +2,7 @@ services:
    sqladmin_my:
       image: phpmyadmin/phpmyadmin:latest
       ports:
-         - "25561-25569:80"
+         - "${MYADMIN_WEBPORT:-25561-25569}:80"
       volumes:
          - pgadmin-store:/var/lib/pgadmin
       restart: always
@@ -21,7 +21,7 @@ services:
    sqladmin_pg:
       image: dpage/pgadmin4:latest
       ports:
-         - "25561-25569:80"
+         - "${PGADMIN_WEBPORT:-25561-25569}:80"
       environment:
          PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-sqladmin@localhost.local}
          PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-password}
