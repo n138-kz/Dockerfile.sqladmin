@@ -3,6 +3,7 @@ services:
       build:
          context: .
          dockerfile: build_sqladmin_my/Dockerfile
+      pull_policy: build
       ports:
          - "${MYADMIN_WEBPORT:-25561-25569}:80"
       volumes:
@@ -24,6 +25,7 @@ services:
       build:
          context: .
          dockerfile: build_sqladmin_pg/Dockerfile
+      pull_policy: build
       ports:
          - "${PGADMIN_WEBPORT:-25561-25569}:80"
       environment:
