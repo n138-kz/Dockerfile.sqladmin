@@ -5,7 +5,7 @@ services:
          dockerfile: build_sqladmin_my/Dockerfile
       pull_policy: build
       ports:
-         - "${MYADMIN_WEBPORT:-25561-25569}:80"
+         - "${MYADMIN_WEBPORT:-30000-30100}:80"
       volumes:
          - pgadmin-store:/var/lib/pgadmin
       restart: always
@@ -27,7 +27,7 @@ services:
          dockerfile: build_sqladmin_pg/Dockerfile
       pull_policy: build
       ports:
-         - "${PGADMIN_WEBPORT:-25561-25569}:80"
+         - "${PGADMIN_WEBPORT:-30000-30100}:80"
       environment:
          PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-sqladmin@localhost.local}
          PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-password}
