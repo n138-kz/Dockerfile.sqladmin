@@ -6,6 +6,7 @@ services:
       pull_policy: build
       ports:
          - "${MYADMIN_WEBPORT:-30000-30100}:80"
+         - "${MYADMIN_WEBPORT:-30100-30200}:443"
       volumes:
          - pgadmin-store:/var/lib/pgadmin
       restart: always
@@ -28,6 +29,7 @@ services:
       pull_policy: build
       ports:
          - "${PGADMIN_WEBPORT:-30000-30100}:80"
+         - "${PGADMIN_WEBPORT:-30100-30200}:443"
       environment:
          PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-sqladmin@localhost.local}
          PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-password}
