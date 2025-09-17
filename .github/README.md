@@ -1,10 +1,6 @@
 # [Dockerfile.sqladmin](https://github.com/n138-kz/Dockerfile.sqladmin)
 
-## Github RestAPI
 
-```http
-GET https://api.github.com/repos/n138-kz/Dockerfile.sqladmin
-```
 
 <details>
 
